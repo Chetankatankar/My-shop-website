@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categories</title>
+    <style>
+        .category-box {
+            display: flex;
+            justify-content: space-between;
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            height: 130px;
+        }
+
+
+        form{
+        margin-left: 300px; 
+        text-align: right;
+        margin-right: 40px;
+        }
+
+        .btn{
+            height: 25px;
+            width: 100px;
+            color: black;
+            border-radius: 5px;
+            font-weight: 500;
+            /* box-shadow: 2px 2px 2px gray; */
+            margin-top: -20px;
+            margin-right: 10px;
+        }
+
+        .btn:hover{
+            /* color: white; */
+            background-color: #007bff6d;
+            cursor: pointer;
+        }
+
+        .search {
+        font-family: Arial, sans-serif;
+        margin: 13px 10px;
+        /* padding: 10px; */
+        margin-top: -30px;
+    }
+
+    .search label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        margin-top: -10px;
+    }
+
+    .search select {
+        width: 150px;
+        padding: 4px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+        margin-top: -15px;
+    
+    }
+
+    .search select:hover {
+        border-color: #007bffe9;
+        background-color: #fff;
+        cursor: pointer;
+
+    }
+   
+
+    </style>
+</head>
+<body>
+    <h2>All Categories of products are here!</h2>
+
+
+    <form action="/view_by_category" method="post">
+        <p class="search">
+            <label>Search By category :</label> <br><br>
+            <select name="category">
+                <option value="select category">select category</option>
+                <option value="grocery">grocery</option>
+                <option value="dryfruits">dryfruits</option>
+                <option value="fruits">fruits</option>
+                <option value="vegetables">vegetables</option>
+                <option value="cold drink">cold drink</option>
+            </select>
+            <!-- <input type="text" name="category" placeholder="Enter category"> -->
+        </p>
+        <input type="submit" name="submit" class="btn">
+    </form>
+
+  <!-- It is displaying all images  -->
+    {% for cat in categories %}
+        <div class="category-box">
+            <!-- <a href="/view_items/{{ cat[0] }}"> -->
+                <img src="{{ cat[2] }}" alt="{{ cat[1] }}"><br>
+                {{ cat[1] }}
+            <!-- </a> -->
+        </div>
+    {% endfor %}
+
+</body>
+</html>

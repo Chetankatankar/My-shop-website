@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact page</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+      background: #2d6a4f;
+      color: black;
+      padding: 1.5rem;
+      /* font-weight: 1000; */
+      text-align: center;
+      background: linear-gradient(to right, rgba(236, 185, 149, 0.683), rgba(63, 86, 119, 0.649));
+    }
+
+   .container-box {
+        margin-left: 200px;
+        max-width: 500px;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 2px 5px rgba(0,0,0,0.1);
+        margin-top: 40px;
+        margin-left: 350px;
+        background: linear-gradient(to right, rgba(236, 185, 149, 0.683), rgba(63, 86, 119, 0.649));
+    }
+    p{
+        padding: 10px;
+        margin-left: 20px;
+    }
+    .container-box2{
+        width: 100%;
+    }
+    .container-img{
+        height: 400px;
+        width: 800px;
+        margin-left: 230px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background-image: url("/static/images/tree7.jpg");
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 3px 3px 20px gray, -3px -3px 10px gray;
+    }
+    form input{
+        padding: 2px 40px 3px 5px;
+        /* background-color: gray; */
+    }
+    form h2{
+        color: white;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    form textarea{
+        padding: 0px 10px;
+    }
+    form button{
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 5px 85px;
+        border-radius: 10px;
+    }
+    form button:hover{
+        background-color: gray;
+    }
+
+    .container-map{
+        margin-left: 340px;
+        margin-bottom: 50px;
+    }
+    
+</style>
+<body>
+
+    <header>
+        <h2>Contact Us!</h2>
+    </header>
+
+    <div class="container-box">
+        <div class="container-info">
+                <p><b>Store Name:</b> Chetan kirana and general stores</p>
+                <p><b>Adress:</b> Hanuman Nagar Wadad, Sakoli 441802</p>
+                <p><b>Phone:</b> +91 9373827166</p>
+                <p><b>Email:</b> chetankatankar2003@gmail.com</p>
+                <p><b>shop Time:</b> Shop open at morning on 6am closed at Night on 9pm</p>
+                <!-- <p>closed at Night on 9pm</p> -->
+        </div>
+    </div>  
+    
+    <div class="container-box2">
+        <div class="container-img">           
+            <form>
+              <h2><b>Send Us a Message!</b></h2>
+              <input type="text" placeholder="Your Name" required><br><br>
+              <input type="number" placeholder="Your Phone number" required><br><br>
+              <!-- <input type="text" placeholder="Subject" required><br><br> -->
+              <textarea rows="5" cols="24" placeholder="Your Message.." required></textarea><br><br>
+              <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+        <div class="container-map">
+            <h3>Visit our shop through map</h3><br>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26223.567192231603!2d80.00014!3d21.03041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2b70d0d4211c75%3A0x59d85a32a25b4ee9!2sWadad%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1741328193924!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        </div>
+
+
+
+</body>
+</html>

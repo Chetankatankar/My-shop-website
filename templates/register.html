@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+
+    <link rel="stylesheet" href="/static/register.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <table border="1" cellpadding="10" cellspacing="2">
+            <tr>
+                <td>
+                    <div class="card">
+                        <form action="/getdata" method="post">
+                            <h2 style="font-family: Josefin Sans;">Register Here!</h2><br>
+                            <label for="name">User Name:</label><br>
+                            <input type="text" name="user_name" placeholder="Enter Full Name" id="name" required><br><br>
+            
+                            <label for="number">Phone Number:</label><br>
+                            <input type="text" name="phone_no" placeholder="Enter Phone No" id="number" required><br><br>
+            
+                            <label for="pass">Password:</label><br>
+                            <input type="password" name="password" placeholder="Enter Password" id="pass" required><br><br>
+            
+                            <input class="btn" type="submit" value="Register!">
+                          [ <a href="/login" style="color: white; text-decoration: none;">Already have an account?Login here</a> ]
+                            <hr>
+                            <hr>
+                        </form> 
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+</head>
+<style>
+    body{
+        background-image: url("/static/images/daria-VtM6-YbXZwY-unsplash.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 80vh;
+        width: 90%;
+    }
+
+    .container{
+        background-image: url("/static/images/tree7.jpg");
+        width: 460px;
+        height: 380px;
+        /* background: linear-gradient(to right, rgba(255, 166, 0, 0.572), rgba(255, 255, 255, 0.744), rgba(0, 128, 0, 0.533)); */
+        margin-left: 400px;
+        margin-top: 80px;
+        border: 1px solid  white;
+        border-radius: 10px;
+        box-shadow: 0 0 4px 4px rgba(128, 128, 128, 0.864);
+
+    }
+    form{
+        color: black;
+        
+    }
+
+    .login-info{
+        padding: 42px;
+        padding-left: 108px;
+        margin: 2px;
+    }
+    .login-info input, label{
+        width: 230px;
+        height: 22px;
+    }
+    .login-here{
+        font-size: 24px;
+        color: white;
+        margin-left: 40px;
+    }
+    button{
+        width: 210px;
+        height: 28px;
+        margin-left: 12px;
+        border-radius: 8px;
+        transition-duration: 2s;
+    }
+    button:hover{
+        background-color: rgb(53, 150, 202);
+        border: 2px solid rgba(149, 7, 31, 0.609);
+        cursor: pointer;
+        box-shadow: 0 0 3px 3px white;
+        transform: scale(0.9);
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="login-info">
+            <form action="/check" method="post">
+                <label for="" class="login-here"><b>Login Here!</b></label><br><br>
+
+                <!-- <label for="user_name">User Name:</label><br> -->
+                <input type="text" name="user_name" id="user_name" placeholder="Enter User Name" required><br><br> <br>
+
+                <!-- <label for="password">Password:</label><br> -->
+                <input type="password" name="password" id="password" placeholder="Enter Your Password" required><br><br><br>
+
+                <button type="submit"><b>Login!</b></button><br><br>
+            </form>
+
+            <a href="/register" style="color: white;">Don't have an Account? Create it now</a><br><br>
+            
+            <a href="/register"><button><b>Sign Up Here!</b></button></a>
+
+        </div>
+    </div>
+    
+</body>
+</html>
