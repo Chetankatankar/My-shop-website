@@ -88,13 +88,27 @@ def shop():
 def contact():
     return render_template('contact.html')
 
+@app.route("/get_message", methods=['POST'])
+def get_message():
+    name = request.form['name']
+    phone_no = request.form['phone_no']
+    message = request.form['message']
+    q = "INSERT INTO contact (name, phone_no, message) VALUES(%s, %s, %s)"
+    cur.execute(q, (name, phone_no, message))
+    cnx.commit()
+    return redirect('/contact_message')
+
+@app.route('/contact_message')
+def contact_message():
+    return render_template('contact_message.html')
+
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect('/')
 
-
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=8000)
+
 
