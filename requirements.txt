@@ -33,7 +33,6 @@ mdurl==0.1.2
 mysql-connector-python==9.2.0
 numpy==2.2.3
 pandas==2.2.3
-PyAudio==0.2.14
 pydantic==2.11.2
 pydantic_core==2.33.1
 Pygments==2.19.1
