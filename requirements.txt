@@ -31,7 +31,6 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 mdurl==0.1.2
 mysql-connector-python==9.2.0
-mysqlclient==2.2.7
 numpy==2.2.3
 pandas==2.2.3
 PyAudio==0.2.14
