@@ -1,20 +1,37 @@
 from flask import Flask, render_template, request, redirect, session
 import mysql.connector
-#connect to server
-cnx = mysql.connector.connect(
-    host="127.0.0.1", 
-    port="3306",
-    user="root",
-    password="chetan",
-    database='shop')
+from urllib.parse import urlparse
+import os
 
-#cursor object
-cur = cnx.cursor()
-
-#object for flask class
+# object for Flask class
 app = Flask(__name__)
-app.secret_key="chetan"
+app.secret_key = "chetan"
 
+# Database connection setup
+db_url = os.getenv("DATABASE_URL")
+
+if db_url:
+    # Parse database URL from Railway
+    url = urlparse(db_url)
+    cnx = mysql.connector.connect(
+        host=url.hostname,
+        user=url.username,
+        password=url.password,
+        database=url.path[1:],  # remove leading slash
+        port=url.port
+    )
+else:
+    # Fallback for local development
+    cnx = mysql.connector.connect(
+        host="127.0.0.1",
+        port=3306,
+        user="root",
+        password="chetan",
+        database="shop"
+    )
+
+# Cursor object
+cur = cnx.cursor()
 
 @app.route("/")
 def home():
@@ -24,7 +41,6 @@ def home():
 def register():
     return render_template('register.html')
 
-#this is for getdata from user at the time of sign up
 @app.route("/getdata", methods=['POST'])
 def getdata():
     user_name = request.form['user_name']
@@ -48,21 +64,15 @@ def check():
     res = cur.fetchone()
     if res is None:
         return "User doesn't exist or phone number or password is incorrect!"    
-    # Store user session
     session['loggedIn'] = True
     session['user_name'] = res[1]
     session['password'] = res[3]
-
     return redirect('/')
 
-
-#route for About Page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
-#route for Category page
 @app.route('/category')
 def category():
     q = "SELECT * FROM categories"
@@ -78,12 +88,10 @@ def view_by_category():
     res = cur.fetchall()
     return render_template("view_category.html", res=res)
 
-#route for shop page
 @app.route("/shop")
 def shop():
     return render_template('shop.html')
 
-#route for contact page
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
@@ -107,8 +115,5 @@ def logout():
     session.clear()
     return redirect('/')
 
-    
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8000)
-
-
